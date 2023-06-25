@@ -1,0 +1,27 @@
+# TradeSystem
+# Plugin by Delta203
+# v1.0 Spigot
+
+str_prefix: '&f[&5Trade&f] &3'
+
+# launch
+# placeholders
+#   %count% : deleted logs
+str_plugin_load: '...start loading TradeSystem'
+str_files_registered: 'Files successfully registered'
+str_mysql_connected: 'MySQl successfully connected'
+str_mysql_registered: 'MySQl tables successfully registered'
+str_log_autodelete: 'Log autodelete successfully executed (%count%)'
+str_plugin_loaded: '&aTradeSystem was successfully loaded'
+
+# general
+# placeholders
+#   %player% : playername
+str_no_permission: '&cYou do not have permission to execute this command!'
+str_player_not_online: '&cThe player %player% is not online!'
+str_you_cant_be_target: '&cYou can not be the target.'
+str_you_must_be_a_player: '&cYou must be a player.'
+
+# help
+str_help_title: '&f[&5Trade&f] &7| &eHelp and information'
+str_help_1: '&b/trade &3<name> &7Offer a trade'

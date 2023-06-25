@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/asm-9.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/authlib-3.17.30.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/brigadier-1.0.18.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/bungeecord-chat-1.16-R0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/checker-qual-3.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/commons-codec-1.11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/commons-io-2.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/commons-lang3-3.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/datafixerupper-6.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/error_prone_annotations-2.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/failureaccess-1.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/fastutil-8.5.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/gson-2.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/guava-31.1-jre.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/httpclient-4.5.13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/httpcore-4.4.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/j2objc-annotations-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/javax.inject-1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/jcl-over-slf4j-1.7.32.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/jline-2.12.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/jna-5.12.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/jna-platform-5.12.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/joml-1.10.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/jopt-simple-5.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/jsr305-3.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/log4j-api-2.19.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/log4j-core-2.19.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/log4j-iostreams-2.19.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/log4j-slf4j2-impl-2.19.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/maven-artifact-3.8.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/maven-builder-support-3.8.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/maven-model-3.8.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/maven-model-builder-3.8.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/maven-repository-metadata-3.8.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/maven-resolver-api-1.6.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/maven-resolver-connector-basic-1.7.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/maven-resolver-impl-1.6.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/maven-resolver-provider-3.8.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/maven-resolver-spi-1.6.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/maven-resolver-transport-http-1.7.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/maven-resolver-util-1.6.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/mysql-connector-j-8.0.32.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/netty-buffer-4.1.82.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/netty-codec-4.1.82.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/netty-common-4.1.82.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/netty-handler-4.1.82.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/netty-resolver-4.1.82.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/netty-transport-4.1.82.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/netty-transport-classes-epoll-4.1.82.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/netty-transport-native-epoll-4.1.82.Final-linux-aarch_64.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/netty-transport-native-epoll-4.1.82.Final-linux-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/netty-transport-native-unix-common-4.1.82.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/org.eclipse.sisu.inject-0.3.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/oshi-core-6.2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/plexus-interpolation-1.26.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/plexus-utils-3.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/protobuf-java-3.21.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/slf4j-api-2.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/snakeyaml-1.33.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/spigot-api-1.19.4-R0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/libraries/sqlite-jdbc-3.41.2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/David-Laptop/Documents/Spigot Libraries/1.19.4/versions/spigot-1.19.4-R0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

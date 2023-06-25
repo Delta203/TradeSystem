@@ -1,0 +1,17 @@
+name: TradeSystem
+version: 1.0
+author: Delta203
+
+main: de.delta203.tradesystem.bukkit.TradeSystem
+
+commands:
+  trade:
+       description: TradeSystem main command
+       permission: tradesystem.use
+  tradeaccept:
+       description: TradeSystem accept command
+       permission: tradesystem.use
+  tradedeny:
+       description: TradeSystem deny command
+       permission: tradesystem.use
+       

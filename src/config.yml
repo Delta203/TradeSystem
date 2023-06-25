@@ -1,0 +1,18 @@
+# TradeSystem
+# Plugin by Delta203
+# v1.0 Spigot
+
+# mysql connection
+str_mysql_url: 'localhost'
+int_mysql_port: 3306
+str_mysql_database: 'test'
+str_mysql_user: 'root'
+str_mysql_password: ''
+
+# logger
+str_format_date: 'dd/MM/yyyy'
+str_format_time: 'HH:mm:ss'
+# autodelete every restart
+# autodelete time in days (recommended: 30)
+# 0 => no autodelete
+int_autodelete_time: 0

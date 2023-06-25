@@ -1,0 +1,3 @@
+MySQl:
+Table TradeSystem_Log:
+ID<int> | CurrentMillis<long> | Date<date> | Time<time> | Players<array> | Content<list>
