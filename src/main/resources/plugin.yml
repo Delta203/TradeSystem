@@ -1,0 +1,11 @@
+name: TradeSystem
+version: 1.0
+api-version: 1.20
+author: Delta203
+
+main: de.tradesystem.delta203.spigot.TradeSystem
+
+commands:
+  trade:
+    description: Trade with other players
+    permission: tradesystem.use

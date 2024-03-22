@@ -1,0 +1,28 @@
+# TradeSystem
+# Plugin by Delta203
+# v1.20.1 Spigot, Java 17
+
+# Messages
+prefix: '§f[§6Trade§f] §7'
+loaded: '§aPlugin successfully loaded.'
+
+help:
+  title: '§7| §fHelp and information'
+  invite: '§e/trade invite §8<name> §7Invite someone to trade'
+  accept: '§e/trade accept §8<name> §7Accept the invite'
+
+be_a_player: '§cYou have to be a player to execute this command!'
+not_yourself: '§cYou can not trade with yourself!'
+not_online: '§cThe player §e%player% §cis not online.'
+be_in_same_world: '§cYou have to be in the same world as the person you want to trade with.'
+disabled_world: '§cYou can not trade in this world.'
+request:
+  already: '§cYou already sent §e%player% §ca request.'
+  sent: '§7You have successfully sent §a%player% §7a trading request!'
+  received: '§7The player §a%player% §7has sent you a trade request! Click accept to proceed with the trade. '
+  accept: '§8[§a§lAccept§8]'
+requesting:
+  no_invite: '§cNobody has sent you a request or the request has expired.'
+
+trade:
+  cancelled: '§cThe trade was cancelled.'
