@@ -13,6 +13,7 @@ placeholder: BLACK_STAINED_GLASS_PANE
 frame: GLASS_PANE
 own_head: '§a%player%'
 coins:
+  enabled: true
   material: SUNFLOWER
   name: '§eCoins§8: §7%coins%'
   lore: '%s%§7Leftclick to §aadd §7coins%s%§7Rightclick to §8remove §7coins%s%%s%§7Leftclick+Shift to §aincrease §7value%s%§7Rightclick+Shift to §8decrease §7value%s%%s%§7Value§8: (§7±§8) §7%value%'

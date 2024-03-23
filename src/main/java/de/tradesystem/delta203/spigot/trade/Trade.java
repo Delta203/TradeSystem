@@ -66,18 +66,31 @@ public class Trade {
         new ItemBuilder(
                 new ItemStack(Material.valueOf(TradeSystem.config.getString("placeholder"))), " ")
             .getItem());
-    inv.setItem(3, getCoinsItem(p));
     inv.setItem(
         4,
         new ItemBuilder(new ItemStack(Material.valueOf(TradeSystem.config.getString("frame"))), " ")
             .getItem());
-    inv.setItem(
-        5,
-        new ItemBuilder(
-                new ItemStack(Material.valueOf(TradeSystem.config.getString("coins.material"))),
-                Objects.requireNonNull(TradeSystem.config.getString("coins.name_target"))
-                    .replace("%coins%", String.valueOf(coins.get(t))))
-            .getItem());
+    if (TradeSystem.config.getBoolean("coins.enabled")) {
+      inv.setItem(3, getCoinsItem(p));
+      inv.setItem(
+          5,
+          new ItemBuilder(
+                  new ItemStack(Material.valueOf(TradeSystem.config.getString("coins.material"))),
+                  Objects.requireNonNull(TradeSystem.config.getString("coins.name_target"))
+                      .replace("%coins%", String.valueOf(coins.get(t))))
+              .getItem());
+    } else {
+      inv.setItem(
+          3,
+          new ItemBuilder(
+                  new ItemStack(Material.valueOf(TradeSystem.config.getString("placeholder"))), " ")
+              .getItem());
+      inv.setItem(
+          5,
+          new ItemBuilder(
+                  new ItemStack(Material.valueOf(TradeSystem.config.getString("placeholder"))), " ")
+              .getItem());
+    }
     inv.setItem(
         6,
         new ItemBuilder(
