@@ -3,13 +3,15 @@
 # v1.20.1 Spigot, Java 17
 
 # Messages
+# Placeholders:
+#   %player%    | player name
 prefix: '§f[§6Trade§f] §7'
 loaded: '§aPlugin successfully loaded.'
 
 help:
   title: '§7| §fHelp and information'
-  invite: '§e/trade invite §8<name> §7Invite someone to trade'
-  accept: '§e/trade accept §8<name> §7Accept the invite'
+  invite: '§e/trade invite <name> §7Invite someone to trade'
+  accept: '§e/trade accept <name> §7Accept the invite'
 
 be_a_player: '§cYou have to be a player to execute this command!'
 not_yourself: '§cYou can not trade with yourself!'
@@ -18,7 +20,7 @@ be_in_same_world: '§cYou have to be in the same world as the person you want to
 disabled_world: '§cYou can not trade in this world.'
 request:
   already: '§cYou already sent §e%player% §ca request.'
-  sent: '§7You have successfully sent §a%player% §7a trading request!'
+  sent: '§aYou have successfully sent §e%player% §aa trading request!'
   received: '§7The player §a%player% §7has sent you a trade request! Click accept to proceed with the trade. '
   accept: '§8[§a§lAccept§8]'
 requesting:
@@ -26,3 +28,5 @@ requesting:
 
 trade:
   cancelled: '§cThe trade was cancelled.'
+  full_inventory: '§cMake sure you have enough space in your inventory.'
+  success: '§7You have traded successfully with §a%player%§7!'

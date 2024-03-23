@@ -13,62 +13,62 @@ import java.util.Objects;
 
 public class FileManager {
 
-    private final String filename;
-    private final File file;
-    private FileConfiguration cfg;
+  private final String filename;
+  private final File file;
+  private FileConfiguration cfg;
 
-    /**
-     * Register a FileManager with the specified filename to handle a configuration file.
-     *
-     * @param filename the name of the config file
-     */
-    public FileManager(String filename) {
-        this.filename = filename;
-        file = new File(TradeSystem.plugin.getDataFolder(), filename);
-    }
+  /**
+   * Register a FileManager with the specified filename to handle a configuration file.
+   *
+   * @param filename the name of the config file
+   */
+  public FileManager(String filename) {
+    this.filename = filename;
+    file = new File(TradeSystem.plugin.getDataFolder(), filename);
+  }
 
-    /**
-     * Create the config file if it does not exist. If the plugins data folder does not exist, create
-     * it as well.
-     */
-    public void create() {
-        if (!TradeSystem.plugin.getDataFolder().exists()) {
-            TradeSystem.plugin.getDataFolder().mkdir();
-        }
-        try {
-            if (!file.exists()) {
-                Files.copy(Objects.requireNonNull(TradeSystem.plugin.getResource(filename)), file.toPath());
-            }
-            cfg = YamlConfiguration.loadConfiguration(file);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+  /**
+   * Create the config file if it does not exist. If the plugins data folder does not exist, create
+   * it as well.
+   */
+  public void create() {
+    if (!TradeSystem.plugin.getDataFolder().exists()) {
+      TradeSystem.plugin.getDataFolder().mkdir();
     }
+    try {
+      if (!file.exists()) {
+        Files.copy(Objects.requireNonNull(TradeSystem.plugin.getResource(filename)), file.toPath());
+      }
+      cfg = YamlConfiguration.loadConfiguration(file);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
 
-    /** Loads the configuration from the file. */
-    public void load() {
-        try {
-            cfg.load(file);
-        } catch (IOException | InvalidConfigurationException e) {
-            e.printStackTrace();
-        }
+  /** Loads the configuration from the file. */
+  public void load() {
+    try {
+      cfg.load(file);
+    } catch (IOException | InvalidConfigurationException e) {
+      e.printStackTrace();
     }
+  }
 
-    /** Saves the configuration to the file. */
-    public void save() {
-        try {
-            cfg.save(file);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+  /** Saves the configuration to the file. */
+  public void save() {
+    try {
+      cfg.save(file);
+    } catch (IOException e) {
+      e.printStackTrace();
     }
+  }
 
-    /**
-     * Gets the configuration object.
-     *
-     * @return the file configuration
-     */
-    public Configuration get() {
-        return cfg;
-    }
+  /**
+   * Gets the configuration object.
+   *
+   * @return the file configuration
+   */
+  public Configuration get() {
+    return cfg;
+  }
 }

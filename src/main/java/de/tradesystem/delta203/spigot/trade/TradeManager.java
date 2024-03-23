@@ -19,13 +19,6 @@ public class TradeManager {
     return invites.get(p);
   }
 
-  public boolean inviteValid(Player p) {
-    if (!invites.containsKey(p)) return false;
-    Player target = getInvited(p);
-    if (target == null) return false;
-    return getInvited(target) == p;
-  }
-
   public void registerInvite(Player p, Player target) {
     invites.put(p, target);
     invites.put(target, p);
@@ -33,6 +26,13 @@ public class TradeManager {
 
   public void unregisterInvite(Player p) {
     invites.remove(p);
+  }
+
+  public boolean inviteValid(Player p) {
+    if (!invites.containsKey(p)) return false;
+    Player target = getInvited(p);
+    if (target == null) return false;
+    return getInvited(target) == p;
   }
 
   public Trade getTrade(Player p) {

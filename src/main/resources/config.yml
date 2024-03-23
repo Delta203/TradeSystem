@@ -3,6 +3,11 @@
 # v1.20.1 Spigot, Java 17
 
 # Inventory
+# Placeholders:
+#   %player%    | player name
+#   %coins%     | amount of coins
+#   %value%     | additional value
+#   %s%         | new line (lore only)
 title: '§8Trading'
 placeholder: BLACK_STAINED_GLASS_PANE
 frame: GLASS_PANE
@@ -10,7 +15,8 @@ own_head: '§a%player%'
 coins:
   material: SUNFLOWER
   name: '§eCoins§8: §7%coins%'
-  lore: '§7Click to manage coins'
+  lore: '%s%§7Leftclick to §aadd §7coins%s%§7Rightclick to §8remove §7coins%s%%s%§7Leftclick+Shift to §aincrease §7value%s%§7Rightclick+Shift to §8decrease §7value%s%%s%§7Value§8: (§7±§8) §7%value%'
+  name_target: '§7Coins§8: §7%coins%'
 button:
   confirm:
     material: ORANGE_DYE
@@ -18,7 +24,7 @@ button:
   finish:
     material: LIME_DYE
     name: '§a§lFinish trade'
-  
+
 unfinished:
   material: GRAY_STAINED_GLASS_PANE
   name: '§8Unfinished'
@@ -28,7 +34,20 @@ processing:
 done:
   material: LIME_STAINED_GLASS_PANE
   name: '§aDone'
-  
+
 # Disabled worlds
 disabled_worlds:
   - test
+
+# Sounds
+sound:
+  event: BLOCK_NOTE_BLOCK_PLING
+  click: ENTITY_ITEM_PICKUP
+  success: ENTITY_PLAYER_LEVELUP
+  cancelled: BLOCK_ANVIL_LAND
+
+# Coins command
+# Placeholders:
+#   %player%    | player name
+#   %amount%    | amount of coins
+send_coins: 'coins send %player% %amount%'
