@@ -41,6 +41,6 @@ public class TradeSystem extends JavaPlugin {
     Bukkit.getPluginManager().registerEvents(new Quit(), this);
 
     Bukkit.getConsoleSender()
-        .sendMessage(prefix + Objects.requireNonNull(messagesYml.get().getString("loaded")));
+        .sendMessage(prefix + Objects.requireNonNull(messages.getString("loaded")));
   }
 }
