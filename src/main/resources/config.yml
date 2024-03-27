@@ -74,9 +74,3 @@ sound:
   click: ENTITY_ITEM_PICKUP
   success: ENTITY_PLAYER_LEVELUP
   cancelled: BLOCK_ANVIL_LAND
-
-# Coins command
-# Placeholders:
-#   %player%    | player name
-#   %amount%    | amount of coins
-send_coins: 'coins send %player% %amount%'
