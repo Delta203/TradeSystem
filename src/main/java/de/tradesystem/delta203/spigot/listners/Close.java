@@ -2,6 +2,7 @@ package de.tradesystem.delta203.spigot.listners;
 
 import de.tradesystem.delta203.spigot.TradeSystem;
 import de.tradesystem.delta203.spigot.trade.Trade;
+import de.tradesystem.delta203.spigot.trade.TradePlayer;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -18,14 +19,20 @@ public class Close implements Listener {
     Trade trade = TradeSystem.tradeManager.getTrade(p);
     if (trade == null) return;
     // valid
-    for (ItemStack item : trade.getItems(p)) {
-      p.getInventory().addItem(item);
+    TradePlayer tp = trade.getPlayer(p);
+    for (ItemStack item : tp.getItems()) {
+      tp.getPlayer().getInventory().addItem(item);
     }
-    p.sendMessage(TradeSystem.prefix + TradeSystem.messages.getString("trade.cancelled"));
-    p.playSound(
-        p.getLocation(), Sound.valueOf(TradeSystem.config.getString("sound.cancelled")), 1, 1);
-    TradeSystem.tradeManager.unregisterTrade(p);
-    Player target = trade.getTarget(p);
-    target.getOpenInventory().close();
+    tp.getPlayer()
+        .sendMessage(TradeSystem.prefix + TradeSystem.messages.getString("trade.cancelled"));
+    tp.getPlayer()
+        .playSound(
+            tp.getPlayer().getLocation(),
+            Sound.valueOf(TradeSystem.config.getString("sound.cancelled")),
+            1,
+            1);
+    TradeSystem.tradeManager.unregisterTrade(tp.getPlayer());
+    TradePlayer target = trade.getTarget(tp);
+    target.getPlayer().getOpenInventory().close();
   }
 }

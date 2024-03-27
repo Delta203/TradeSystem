@@ -6,6 +6,7 @@ import de.tradesystem.delta203.spigot.listners.Click;
 import de.tradesystem.delta203.spigot.listners.Close;
 import de.tradesystem.delta203.spigot.listners.Quit;
 import de.tradesystem.delta203.spigot.trade.TradeManager;
+import de.tradesystem.delta203.spigot.utils.Interface;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -19,6 +20,7 @@ public class TradeSystem extends JavaPlugin {
   public static Configuration config;
   public static Configuration messages;
   public static TradeManager tradeManager;
+  public static Interface inter;
 
   @Override
   public void onEnable() {
@@ -34,6 +36,12 @@ public class TradeSystem extends JavaPlugin {
 
     prefix = messages.getString("prefix");
     tradeManager = new TradeManager();
+    if (config.getBoolean("interface.enabled")) {
+      Interface.Type type =
+          Interface.Type.valueOf(
+              Objects.requireNonNull(config.getString("interface.type")).toUpperCase());
+      inter = new Interface(type);
+    }
 
     Objects.requireNonNull(getCommand("trade")).setExecutor(new Commands());
     Bukkit.getPluginManager().registerEvents(new Click(), this);

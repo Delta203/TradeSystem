@@ -7,6 +7,8 @@
 #   %player%    | player name
 prefix: '§f[§6Trade§f] §7'
 loaded: '§aPlugin successfully loaded.'
+mysql_connected: '§aMySQl connection successful established.'
+file_loaded: '§aFile connection successful established.'
 
 help:
   title: '§7| §fHelp and information'
@@ -29,4 +31,5 @@ requesting:
 trade:
   cancelled: '§cThe trade was cancelled.'
   full_inventory: '§cMake sure you have enough space in your inventory.'
+  no_coins: '§cMake sure you have enough coins for this trade.'
   success: '§7You have traded successfully with §a%player%§7!'

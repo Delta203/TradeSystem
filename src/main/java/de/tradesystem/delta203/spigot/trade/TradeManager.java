@@ -41,11 +41,11 @@ public class TradeManager {
   }
 
   public void createTrade(Player p, Player target) {
-    Trade trade = new Trade(p, target);
-    trades.put(p, trade);
-    trades.put(target, trade);
-    p.openInventory(trade.createInventory(p));
-    target.openInventory(trade.createInventory(target));
+    TradePlayer tpP = new TradePlayer(p);
+    TradePlayer tpT = new TradePlayer(target);
+    Trade trade = new Trade(tpP, tpT);
+    trades.put(tpP.getPlayer(), trade);
+    trades.put(tpT.getPlayer(), trade);
   }
 
   public void unregisterTrade(Player p) {

@@ -2,6 +2,35 @@
 # Plugin by Delta203
 # v1.20.1 Spigot, Java 17
 
+# Coin system interface
+# You already need a coin system that can be accessed by an 
+# interface. Without this, it is not possible to trade coins. 
+# As soon as this is selected and the correct data has been 
+# entered, you can trade coins.
+# Interface types:
+#   mysql       | Connect a mysql database
+#   config      | Connect a yaml file
+# Placeholders:
+#   %uuid%      | player uuid
+interface:
+  enabled: false
+  type: 'config'
+  mysql:
+    url: 'localhost'
+    port: 3306
+    database: 'test'
+    user: 'root'
+    password: ''
+    table:
+      name: 'CoinSystem'
+      columns:
+        uuid: 'PlayerUUID'
+        coins: 'Coins'
+  config:
+    path: 'plugins/CoinSystem'
+    file: 'database.yml'
+    item: 'Coins.%uuid%'
+
 # Inventory
 # Placeholders:
 #   %player%    | player name
@@ -13,7 +42,6 @@ placeholder: BLACK_STAINED_GLASS_PANE
 frame: GLASS_PANE
 own_head: '§a%player%'
 coins:
-  enabled: true
   material: SUNFLOWER
   name: '§eCoins§8: §7%coins%'
   lore: '%s%§7Leftclick to §aadd §7coins%s%§7Rightclick to §8remove §7coins%s%%s%§7Leftclick+Shift to §aincrease §7value%s%§7Rightclick+Shift to §8decrease §7value%s%%s%§7Value§8: (§7±§8) §7%value%'
