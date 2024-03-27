@@ -9,6 +9,7 @@ prefix: '§f[§6Trade§f] §7'
 loaded: '§aPlugin successfully loaded.'
 mysql_connected: '§aMySQl connection successful established.'
 file_loaded: '§aFile connection successful established.'
+essentials_loaded: '§aEssentials connection successful established.'
 
 help:
   title: '§7| §fHelp and information'

@@ -2,10 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2] - 28.03.24
+- Essentials support
+- Balance info in GUI
+
 ## [1.1] - 27.03.24
 - TradePlayer object
 - Coin system interface
   - MySQl
   - YAML
-- advanced settings in `config.yml` 
-- updated `messages.yml`
+- Advanced settings in `config.yml` 
+- Updated `messages.yml`

@@ -147,7 +147,8 @@ public class Trade {
             Objects.requireNonNull(TradeSystem.config.getString("coins.name"))
                 .replace("%coins%", String.valueOf(tp.getCoins())),
             Objects.requireNonNull(TradeSystem.config.getString("coins.lore"))
-                .replace("%value%", String.valueOf(tp.getValue())))
+                .replace("%value%", String.valueOf(tp.getValue()))
+                .replace("%balance%", String.valueOf(TradeSystem.inter.getCoins(tp.getPlayer()))))
         .getItem();
   }
 
@@ -345,16 +346,12 @@ public class Trade {
     }
     // optional coins
     if (host.getCoins() > 0) {
-      TradeSystem.inter.setCoins(
-          host.getPlayer(), TradeSystem.inter.getCoins(host.getPlayer()) - host.getCoins());
-      TradeSystem.inter.setCoins(
-          target.getPlayer(), TradeSystem.inter.getCoins(target.getPlayer()) + host.getCoins());
+      TradeSystem.inter.addCoins(host.getPlayer(), -host.getCoins());
+      TradeSystem.inter.addCoins(target.getPlayer(), host.getCoins());
     }
     if (target.getCoins() > 0) {
-      TradeSystem.inter.setCoins(
-          target.getPlayer(), TradeSystem.inter.getCoins(target.getPlayer()) - target.getCoins());
-      TradeSystem.inter.setCoins(
-          host.getPlayer(), TradeSystem.inter.getCoins(host.getPlayer()) + target.getCoins());
+      TradeSystem.inter.addCoins(target.getPlayer(), -target.getCoins());
+      TradeSystem.inter.addCoins(host.getPlayer(), target.getCoins());
     }
     TradeSystem.tradeManager.unregisterTrade(host.getPlayer());
     TradeSystem.tradeManager.unregisterTrade(target.getPlayer());

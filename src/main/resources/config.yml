@@ -8,13 +8,16 @@
 # As soon as this is selected and the correct data has been 
 # entered, you can trade coins.
 # Interface types:
-#   mysql       | Connect a mysql database
-#   config      | Connect a yaml file
+#   mysql       | Connect a MySQl database
+#   config      | Connect a YAML file
+#   essentials  | Connect YAML files with specific player data
 # Placeholders:
 #   %uuid%      | player uuid
+#   %coins%     | amount of coins (e.g. /addcoins foo %coins%)
+#   %COINS%     | amount of player coins + traded coins (e.g. /setcoins foo %COINS%)
 interface:
   enabled: false
-  type: 'config'
+  type: 'mysql'
   mysql:
     url: 'localhost'
     port: 3306
@@ -30,11 +33,19 @@ interface:
     path: 'plugins/CoinSystem'
     file: 'database.yml'
     item: 'Coins.%uuid%'
+  essentials:
+    path: 'plugins/Essentials/userdata'
+    file: '%uuid%.yml'
+    item: 'money'
+    command:
+      give: 'eco give %uuid% %coins%'
+      take: 'eco take %uuid% %coins%'
 
 # Inventory
 # Placeholders:
 #   %player%    | player name
 #   %coins%     | amount of coins
+#   %balance%   | player balance
 #   %value%     | additional value
 #   %s%         | new line (lore only)
 title: '§8Trading'
@@ -44,7 +55,7 @@ own_head: '§a%player%'
 coins:
   material: SUNFLOWER
   name: '§eCoins§8: §7%coins%'
-  lore: '%s%§7Leftclick to §aadd §7coins%s%§7Rightclick to §8remove §7coins%s%%s%§7Leftclick+Shift to §aincrease §7value%s%§7Rightclick+Shift to §8decrease §7value%s%%s%§7Value§8: (§7±§8) §7%value%'
+  lore: '§3Balance§8: §7%balance%%s%%s%§7Leftclick to §aadd §7coins%s%§7Rightclick to §8remove §7coins%s%%s%§7Leftclick+Shift to §aincrease §7value%s%§7Rightclick+Shift to §8decrease §7value%s%%s%§7Value§8: (§7±§8) §7%value%'
   name_target: '§7Coins§8: §7%coins%'
 button:
   confirm:
