@@ -16,6 +16,7 @@ Trade items and coins with other players in a safe way!
 interface:
   enabled: false
   type: 'mysql'
+  datatype: 'integer'
   mysql:
     url: 'localhost'
     port: 3306
@@ -60,6 +61,10 @@ Can also be used if other plugins use player specific configuration files. It re
 - `item` The YAML item path
 - `command.give` The give coins command
 - `command.take` The take coins command
+
+**Data type** <br/>
+- `int` Your coins are stored as integers
+- `double` Your coins are stored as doubles
 
 ## Functions:
 - Trade items with other players
