@@ -5,11 +5,12 @@
 # Messages
 # Placeholders:
 #   %player%    | player name
+#   %datatype%  | coins data type
 prefix: '§f[§6Trade§f] §7'
 loaded: '§aPlugin successfully loaded.'
 mysql_connected: '§aMySQl connection successful established.'
 file_loaded: '§aFile connection successful established.'
-essentials_loaded: '§aEssentials connection successful established.'
+data_type_loaded: '§aThe coins data type was set to %datatype%.'
 
 help:
   title: '§7| §fHelp and information'

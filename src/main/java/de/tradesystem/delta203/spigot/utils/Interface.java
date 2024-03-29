@@ -14,8 +14,7 @@ public class Interface {
 
   public enum Type {
     MYSQL,
-    CONFIG,
-    ESSENTIALS
+    FILE
   }
 
   private enum DataType {
@@ -26,7 +25,6 @@ public class Interface {
   private final Type type;
   private DataType dataType;
   private MySQlManager mysql;
-  private FileManager configYml;
 
   public Interface(Type type) {
     this.type = type;
@@ -35,11 +33,15 @@ public class Interface {
       dataType = DataType.DOUBLE;
     }
     if (type == Type.MYSQL) registerMySQl();
-    else if (type == Type.CONFIG) registerConfig();
-    else if (type == Type.ESSENTIALS) {
+    else if (type == Type.FILE) {
       Bukkit.getConsoleSender()
-          .sendMessage(TradeSystem.prefix + TradeSystem.messages.getString("essentials_loaded"));
+          .sendMessage(TradeSystem.prefix + TradeSystem.messages.getString("file_loaded"));
     }
+    Bukkit.getConsoleSender()
+        .sendMessage(
+            TradeSystem.prefix
+                + Objects.requireNonNull(TradeSystem.messages.getString("data_type_loaded"))
+                    .replace("%datatype%", dataType.name()));
   }
 
   private void registerMySQl() {
@@ -52,21 +54,12 @@ public class Interface {
     mysql.connect();
   }
 
-  private void registerConfig() {
-    configYml =
-        new FileManager(
-            TradeSystem.config.getString("interface.config.path"),
-            TradeSystem.config.getString("interface.config.file"));
-    configYml.create();
-    Bukkit.getConsoleSender()
-        .sendMessage(TradeSystem.prefix + TradeSystem.messages.getString("file_loaded"));
-  }
-
   private FileManager getPlayerConfig(Player p) {
-    String path = TradeSystem.config.getString("interface.essentials.path");
+    String path = TradeSystem.config.getString("interface.file.path");
     String file =
-        Objects.requireNonNull(TradeSystem.config.getString("interface.essentials.file"))
-            .replace("%uuid%", p.getUniqueId().toString());
+        Objects.requireNonNull(TradeSystem.config.getString("interface.file.file"))
+            .replace("%uuid%", p.getUniqueId().toString())
+            .replace("%player%", p.getName());
     FileManager playerConfig = new FileManager(path, file);
     playerConfig.create();
     playerConfig.load();
@@ -93,29 +86,18 @@ public class Interface {
           }
           break;
         }
-      case CONFIG:
+      case FILE:
         {
           String item =
-              Objects.requireNonNull(TradeSystem.config.getString("interface.config.item"))
-                  .replace("%uuid%", p.getUniqueId().toString());
-          configYml.load();
-          if (configYml.get().get(item) instanceof String) {
-            // Maybe other plugins sores money as string as well
-            return Double.parseDouble(Objects.requireNonNull(configYml.get().getString(item)));
+              Objects.requireNonNull(TradeSystem.config.getString("interface.file.item"))
+                  .replace("%uuid%", p.getUniqueId().toString())
+                  .replace("%player%", p.getName());
+          FileManager fileYml = getPlayerConfig(p);
+          if (fileYml.get().get(item) instanceof String) {
+            // Some plugins store money as string as well
+            return Double.parseDouble(Objects.requireNonNull(fileYml.get().getString(item)));
           } else {
-            return configYml.get().getDouble(item);
-          }
-        }
-      case ESSENTIALS:
-        {
-          String item =
-              Objects.requireNonNull(TradeSystem.config.getString("interface.essentials.item"));
-          FileManager playerConfig = getPlayerConfig(p);
-          if (playerConfig.get().get(item) instanceof String) {
-            // Essentials stores money as string
-            return Double.parseDouble(Objects.requireNonNull(playerConfig.get().getString(item)));
-          } else {
-            return playerConfig.get().getDouble(item);
+            return fileYml.get().getDouble(item);
           }
         }
     }
@@ -128,7 +110,7 @@ public class Interface {
         {
           String nameTable = TradeSystem.config.getString("interface.mysql.table.name");
           String uuidTable = TradeSystem.config.getString("interface.mysql.table.columns.uuid");
-          String coinsTable = TradeSystem.config.getString("interface.mysql.table..columns.coins");
+          String coinsTable = TradeSystem.config.getString("interface.mysql.table.columns.coins");
           try {
             PreparedStatement ps =
                 mysql.connection.prepareStatement(
@@ -148,23 +130,12 @@ public class Interface {
           }
           break;
         }
-      case CONFIG:
-        {
-          String item =
-              Objects.requireNonNull(TradeSystem.config.getString("interface.config.item"))
-                  .replace("%uuid%", p.getUniqueId().toString());
-          configYml.load();
-          if (dataType == DataType.DOUBLE) configYml.get().set(item, getCoins(p) + coins);
-          else configYml.get().set(item, (int) getCoins(p) + coins);
-          configYml.save();
-          break;
-        }
-      case ESSENTIALS:
+      case FILE:
         {
           String command =
-              Objects.requireNonNull(
-                      TradeSystem.config.getString("interface.essentials.command.give"))
+              Objects.requireNonNull(TradeSystem.config.getString("interface.file.command.give"))
                   .replace("%uuid%", p.getUniqueId().toString())
+                  .replace("%player%", p.getName())
                   .replace("%coins%", String.valueOf(coins))
                   .replace(
                       "%COINS%",
@@ -173,17 +144,18 @@ public class Interface {
                               ? getCoins(p) + coins
                               : (int) getCoins(p) + coins));
           if (coins < 0) {
+            coins = coins * (-1);
             command =
-                Objects.requireNonNull(
-                        TradeSystem.config.getString("interface.essentials.command.take"))
+                Objects.requireNonNull(TradeSystem.config.getString("interface.file.command.take"))
                     .replace("%uuid%", p.getUniqueId().toString())
+                    .replace("%player%", p.getName())
                     .replace("%coins%", String.valueOf(coins))
                     .replace(
                         "%COINS%",
                         String.valueOf(
                             dataType == DataType.DOUBLE
-                                ? getCoins(p) + coins
-                                : (int) getCoins(p) + coins));
+                                ? getCoins(p) - coins
+                                : (int) getCoins(p) - coins));
           }
           Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
           break;

@@ -6,16 +6,17 @@
 # You already need a coin system that can be accessed by an 
 # interface. Without this, it is not possible to trade coins. 
 # As soon as this is selected and the correct data has been 
-# entered, you can trade coins.
+# entered, you can trade coins. Make sure that type file always
+# requires a command to set the player coins.
+# Interface types:
+#   mysql       | Connect a MySQl database
+#   file        | Connect a YAML file
 # Data types:
 #   int         | integer (default)
 #   double      | double
-# Interface types:
-#   mysql       | Connect a MySQl database
-#   config      | Connect a YAML file
-#   essentials  | Connect YAML files with specific player data
 # Placeholders:
 #   %uuid%      | player uuid
+#   %player%    | player name
 #   %coins%     | amount of coins (e.g. /addcoins foo %coins%)
 #   %COINS%     | amount of player coins + traded coins (e.g. /setcoins foo %COINS%)
 interface:
@@ -33,11 +34,7 @@ interface:
       columns:
         uuid: 'PlayerUUID'
         coins: 'Coins'
-  config:
-    path: 'plugins/CoinSystem'
-    file: 'database.yml'
-    item: 'Coins.%uuid%'
-  essentials:
+  file:
     path: 'plugins/Essentials/userdata'
     file: '%uuid%.yml'
     item: 'money'

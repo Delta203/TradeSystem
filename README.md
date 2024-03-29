@@ -28,11 +28,7 @@ interface:
       columns:
         uuid: 'PlayerUUID'
         coins: 'Coins'
-  config:
-    path: 'plugins/CoinSystem'
-    file: 'database.yml'
-    item: 'Coins.%uuid%'
-  essentials:
+  file:
     path: 'plugins/Essentials/userdata'
     file: '%uuid%.yml'
     item: 'money'
@@ -40,7 +36,7 @@ interface:
       give: 'eco give %uuid% %coins%'
       take: 'eco take %uuid% %coins%'
 ```
-You must already have a coin system to be able to use the coin trade function. The player's coins 
+You must already have a coin system to be able to use the coin trade function. The players coins 
 must be stored either in a MySQl database or in a YAML file. Then it is possible to access the 
 coins with a customisable interface.
 
@@ -49,15 +45,9 @@ coins with a customisable interface.
 - `table.columns.uuid` The column name of player uuid
 - `table.columns.coins` The column name of coins
 
-**Config:** <br/>
+**File:** <br/>
 - `path` The path to the coin database file
 - `file` The name of the file
-- `item` The YAML item path
-
-**Essentials:** <br/>
-Can also be used if other plugins use player specific configuration files. It requires a command to give and take coins.
-- `path` The path to userdata
-- `file` The name of player data file
 - `item` The YAML item path
 - `command.give` The give coins command
 - `command.take` The take coins command

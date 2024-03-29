@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3] - 29.03.24
+- Interface individual file support
+  - Global coins database
+  - Player specific database
+  - Requires command for changing player coins
+  - %player% player name placeholder
+- Updated `messages.yml`
+
 ## [1.2.1] - 28.03.24
 - Double data type support
 
